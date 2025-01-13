@@ -1,0 +1,86 @@
+<div class="order-list-container container py-4">
+  <h2 class="title text-center text-primary mb-4">Order List</h2>
+
+  <!-- Search Bar -->
+  <div class="search-bar row mb-4">
+    <div class="col-md-6 mx-auto">
+      <div class="input-group shadow-sm">
+        <span class="input-group-text bg-primary text-white">
+          <i class="fas fa-search"></i>
+        </span>
+        <input type="text" class="form-control search-input" placeholder="Search by Order ID or Phone Number"
+          [(ngModel)]="searchTerm" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Table -->
+  <div class="table-responsive shadow rounded">
+    <table class="table table-hover order-table align-middle">
+      <thead class="thead-light bg-primary text-white">
+        <tr>
+          <th>Order ID</th>
+          <th>Name</th>
+          <th>Order Date</th>
+          <th>Address</th>
+          <th>Amount (₹)</th>
+          <th>Product ID</th>
+          <th>Quantity</th>
+          <th>Status</th>
+          <th>Payment Status</th>
+          <th>Expected Delivery</th>
+          <th>Update Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of filteredOrders()" class="align-middle">
+          <td class="fw-bold">{{ order.orderId }}</td>
+          <td>{{ order.address.name }}</td>
+          <td class="text-nowrap">{{ order.orderDate | date: 'dd-MM-yyyy' }}</td>
+          <td>
+            <div class="address-block small text-muted">
+              {{ order.address.name }}<br />
+              {{ order.address.phone }}<br />
+              {{ order.address.addressLine1 }}<br />
+              {{ order.address.addressLine2 ? order.address.addressLine2 + ', ' : '' }}<br />
+              {{ order.address.city }}, {{ order.address.state }}<br />
+              {{ order.address.zip }}
+            </div>
+          </td>
+          <td class="fw-bold text-success">{{ order.amount | currency: 'INR' }}</td>
+          <td>
+            <ng-container *ngFor="let item of order.orderItems; let last = last">
+              {{ item.productId }}<span *ngIf="!last">, </span>
+            </ng-container>
+          </td>
+          <td>
+            <ng-container *ngFor="let item of order.orderItems; let last = last">
+              {{ item.quantity }}<span *ngIf="!last">, </span>
+            </ng-container>
+          </td>
+          <td>
+            <span class="badge" [ngClass]="{
+                'bg-success': order.orderStatus === 'Delivered',
+                'bg-warning': order.orderStatus === 'Shipped',
+                'bg-danger': order.orderStatus === 'Canceled',
+                
+              }">
+              {{ order.orderStatus }}
+            </span>
+          </td>
+          <td>{{ order.paymentStatus }}</td>
+          <td>{{ order.deliveryDate | date: 'dd-MM-yyyy' }}</td>
+          <td>
+            <select class="form-select form-select-sm" (change)="onStatusChange($event, order.orderId)"
+              [disabled]="order.orderStatus === 'Canceled'">
+
+              <option [selected]="order.orderStatus === 'Shipped'" value="Shipped">Shipped</option>
+              <option [selected]="order.orderStatus === 'Delivered'" value="Delivered">Delivered</option>
+              <option [selected]="order.orderStatus === 'Canceled'" value="Canceled">Canceled</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

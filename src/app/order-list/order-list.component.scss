@@ -1,0 +1,275 @@
+.container-fluid {
+    padding: 0;
+
+    .container {
+        padding: 20px;
+
+        .card-block {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 5px;
+            padding: 20px;
+
+            .card-title {
+                margin-bottom: 15px;
+                text-align: center;
+
+                .header-1 {
+                    font-size: 20px;
+                    font-family: "Gabriela", serif;
+                    margin: 0;
+                    font-weight: 700;
+                    color: #1a1a1a;
+                }
+            }
+
+            .card-Overall {
+                padding: 15px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+
+                .card-cart {
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                    padding: 10px;
+                    position: relative;
+                    background: #fff;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+
+                    .card-split {
+                        display: flex;
+
+                        .card-left {
+                            .catdProduct-img {
+                                width: 150px;
+                                height: 150px;
+
+                                img {
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .card-right {
+                            margin-left: 15px;
+                            border-left: 1px solid rgba(170, 169, 169, 0.3294117647);
+                            padding-left: 15px;
+                            width: 100%;
+
+                            .card-productBlock {
+                                .card-product {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    gap: 15px;
+
+                                    .card-title {
+                                        margin-bottom: 0;
+                                        font-size: 18px;
+                                        font-family: "Montserrat", sans-serif;
+                                        font-weight: 600;
+                                        text-transform: capitalize;
+
+                                    }
+
+                                    .card-text {
+                                        font-family: lora;
+                                        color: #8a8a8a;
+                                        font-size: 15px;
+                                        line-height: 1.2;
+
+                                        span {
+
+                                            font-weight: 500;
+                                        }
+                                    }
+                                }
+
+                                .overall-desc {
+                                    .Block {
+
+                                        // margin-bottom: 5px;
+                                        .home-badge {
+                                            padding: 2px 10px;
+                                            background: #1a8c1ad9;
+                                            border-radius: 50px;
+                                            color: #fff;
+                                            font-size: 12px;
+                                        }
+
+                                    }
+
+                                    .spc-quality {
+                                        p {
+                                            font-family: lora;
+                                            color: #8a8a8a;
+                                            font-size: 12px;
+                                            line-height: 1.2;
+                                            margin-bottom: 0;
+                                            margin-top: 5px;
+                                            margin-bottom: 5px;
+
+                                            span {
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    }
+
+                                    .mrp-block {
+                                        .mrp-style {
+                                            font-family: lora;
+                                            color: #8a8a8a;
+                                            font-size: 12px;
+                                            font-weight: 500;
+                                            margin-bottom: 0;
+
+                                            span {
+                                                text-decoration: line-through;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .card-border-down {
+                                    border-top: 1px solid rgba(170, 169, 169, 0.3294117647);
+
+                                    .text-center {
+                                        .card-text {
+                                            font-family: lora;
+                                            color: #000000;
+                                            font-size: 14px;
+                                            line-height: 1.2;
+                                            margin-top: 5px;
+
+                                            span {
+                                                font-weight: 700;
+                                                color: #0caf12;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .closeBlock {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+
+                        .close-btn {
+                            border-radius: 50px;
+                            padding: 2px 10px;
+                            background-color: unset;
+                            border: unset;
+                            color: #000;
+                            transition: 0.7s;
+                            margin-right: 0 !important;
+                            /* font-weight: 700; */
+                            font-size: 17px;
+
+                            &:hover {
+                                color: #dc3545;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+.main {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.cart {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.check-out {
+    button {
+        width: 100%;
+    }
+}
+@media (max-width:500px) {
+    .card-split {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+
+        .card-right {
+            border-top: 1px solid rgba(170, 169, 169, 0.3294117);
+            border-left: unset !important;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+            padding-top: 10px;
+        }
+
+        .catdProduct-img {
+            width: 200px !important;
+            height: 200px !important;
+        }
+
+        .card-product {
+            gap: 10px !important;
+        }
+    }
+}
+
+
+.back-button-container {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    /* Icon color */
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Slight background on hover */
+    border-radius: 4px;
+}
+
+.back-text {
+    display: none;
+    /* Hide text by default */
+    margin-left: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.back-button:hover .back-text {
+    display: inline;
+    /* Show text on hover */
+}
+
+.back-button i {
+    font-size: 16px;
+}
+
+/* Add this to your CSS or SCSS file */
+@media (max-width: 767px) {
+    .back-button-container {
+        display: none;
+    }
+}

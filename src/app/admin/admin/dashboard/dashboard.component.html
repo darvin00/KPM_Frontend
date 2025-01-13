@@ -1,0 +1,37 @@
+<div class="d-flex flex-column flex-md-row min-vh-100">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <h4>Admin Panel</h4>
+    <ul>
+      <li>
+        <a routerLink="overview"><i class="fas fa-tachometer-alt"></i> Overview</a>
+      </li>
+      <li>
+        <a routerLink="product"><i class="fas fa-box-open"></i> Sheshine Product</a>
+      </li>
+      <li>
+        <a routerLink="shineproductadd"><i class="fas fa-gem"></i> Shine Product</a>
+      </li>
+      <li>
+        <a routerLink="order"><i class="fas fa-shopping-cart"></i> Order Management</a>
+      </li>
+      <li>
+        <a routerLink="customer"><i class="fas fa-users"></i> Customer Management</a>
+      </li>
+      <li>
+        <a routerLink="report"><i class="fas fa-envelope"></i> Offer Mails</a>
+      </li>
+      <li>
+        <a routerLink="adminreview"><i class="fas fa-star"></i> Admin Review</a>
+      </li>
+      <li class="logout">
+        <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

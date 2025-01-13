@@ -1,0 +1,60 @@
+<div class="back-button-container">
+    <button class="btn btn-secondary back-button" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> <span class="back-text">Back</span>
+    </button>
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <div class="card-block">
+            <div class="card-title">
+                <p class="header-1">Orders of KPM Super Shopee</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" >
+
+                    <div class="" *ngFor="let item of orders">
+                        <div class="card-Overall">
+                            <div class="card-cart" (click)="storeOrderId(item.orderId)" *ngFor="let orderItem of item.orderItems">
+                                <div class="card-split" >
+                                    <div class="card-left">
+                                        <div class="catdProduct-img" *ngIf="orderItem">
+                                            <img [src]="orderItem.thumbnail"
+                                                class="img-fluid rounded-start w-100" alt="Product Image">
+                                        </div>
+                                    </div>
+                                    <div class="card-right">
+                                        <div class="card-productBlock">
+                                            <div class="card-product">
+                                                <p class="card-title">{{ orderItem.name }}</p>
+                                                <p class="card-text"><span>Suitable for: </span>{{
+                                                    orderItem.suitable }}</p>
+                                            </div>
+                                            <div class="overall-desc">
+                                                <div class="spc-quality">
+                                                    <p><span>Quantity:</span> {{ orderItem.quantity }}</p>
+                                                </div>
+
+                                                <div class="mrp-block">
+                                                    <p class="mrp-style">MRP: <span>{{ orderItem.price |
+                                                            currency:'INR' }}</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="card-border-down">
+                                                <div class="text-center">
+                                                    <p class="card-text"><span>Total amount:</span> {{
+                                                        orderItem.totalPrice|
+                                                        currency:'INR' }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

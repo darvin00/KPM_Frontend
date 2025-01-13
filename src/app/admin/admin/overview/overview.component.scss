@@ -1,0 +1,75 @@
+// Fullscreen container styling
+.overview-container {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .row {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .metric {
+    background: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+
+    // Keeps the p.metric-value styling unchanged
+    p.metric-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .metric-icon {
+
+      top: 20px;
+      right: 20px;
+      background: #f8f9fa;
+      color: #007bff;
+      border-radius: 50%;
+      font-size: 4rem;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      z-index: 0;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Low Stock List
+  .list-group-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

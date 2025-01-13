@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://kpm.thikse.in",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
